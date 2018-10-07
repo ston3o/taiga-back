@@ -6,12 +6,12 @@ TEMPLATE_DEBUG = False
 
 SECRET_KEY = '$TAIGA_SECRET'
 
-MEDIA_URL = "https://$TAIGA_HOST/media/"
-STATIC_URL = "https://$TAIGA_HOST/static/"
-ADMIN_MEDIA_PREFIX = "https://$TAIGA_HOST/static/admin/"
-SITES["api"]["scheme"] = "https"
+MEDIA_URL = "$SCHEME://$TAIGA_HOST/media/"
+STATIC_URL = "$SCHEME://$TAIGA_HOST/static/"
+ADMIN_MEDIA_PREFIX = "$SCHEME://$TAIGA_HOST/static/admin/"
+SITES["api"]["scheme"] = "$SCHEME"
 SITES["api"]["domain"] = "$TAIGA_HOST"
-SITES["front"]["scheme"] = "https"
+SITES["front"]["scheme"] = "$SCHEME"
 SITES["front"]["domain"] = "$TAIGA_HOST"
 
 DATABASES = {

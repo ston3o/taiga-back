@@ -17,6 +17,7 @@ if [ ! -f $INITIAL_SETUP_LOCK ]; then
         -e 's/$RABBIT_USER/'$RABBIT_USER'/' \
         -e 's/$RABBIT_PASSWORD/'$RABBIT_PASSWORD'/' \
         -e 's/$RABBIT_VHOST/'$RABBIT_VHOST'/' \
+        -e 's/$SCHEME/'$SCHEME'/' \
         -i /tmp/taiga-conf/config.py
     cp /tmp/taiga-conf/config.py /taiga-conf/
     ln -sf /taiga-conf/config.py /srv/taiga/back/settings/local.py
